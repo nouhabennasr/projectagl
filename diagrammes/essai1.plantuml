@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+actor Utilisateur as User
+actor Administrateur as Admin
+User --|> Admin
+
+rectangle "Système domotique CasaControl" {
+    usecase "Contrôler l'éclairage" as UCE 
+    usecase "Gérer l'économie d'énergie" as UGE
+    usecase "Surveiller la maison" as USM
+    usecase "Automatiser des tâches" as UAT
+    usecase "Gérer le système" as GS
+usecase " s'authentifier" as S
+usecase " Installer les infrastructures et les mettre en mode fonctionnel" as IIF
+usecase " Mettre en mode fonctionnel le réseau de communication" as RC
+usecase " Faire une analyse de la consommation d'énergie" as ACE
+usecase " Reconnaître la tâche à automatiser dans le système" as TA
+
+
+
+
+
+(UCE) .> (S) : include
+(USM) .> (S) : include
+(UAT) .> (S) : include
+(GS) .> (S) : include
+(UCE) .> (ACE) : include
+(UAT) .> (TA) : include
+
+(UCE) .> (IIF) : include
+(UGE) .> (IIF) : include
+(USM) .> (IIF) : include
+(UAT) .> (IIF) : include
+(GS) .> (IIF) : include
+
+(UCE) .> (RC) : include
+(UGE) .> (RC) : include
+(USM) .> (RC) : include
+(UAT) .> (RC) : include
+(GS) .> (RC) : include
+    User --> UCE
+    User --> UGE : Optimiser la consommation\ndétecter les gaspillages
+    User --> USM : Surveiller la maison\ndétecter intrusions, fuites, incendies\nrecevoir alertes en cas d'événements anormaux
+    User --> UAT : Contrôler la musique\nOuvrir/Fermer portes et volets\nà distance pour les visiteurs autorisés
+    Admin --> GS : contrôler l'ajout, la modification et la suppression de fonctionnalités
+}
+@enduml

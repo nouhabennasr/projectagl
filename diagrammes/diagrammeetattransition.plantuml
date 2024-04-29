@@ -1,0 +1,29 @@
+@startuml Diagramme d'état de transition
+
+
+state Eteint  #Pink {
+}
+state Demarrage #SkyBlue  {
+
+}
+
+state EnMarche #SkyBlue {
+
+}
+
+state Fin #pink {
+}
+
+
+
+Fin : Fin_Execution()
+Demarrage : Debut_Execution()
+EnMarche : Envoyer_Signal()
+
+[*] --> Eteint
+ Eteint->Demarrage : Démarrer
+ Demarrage->Eteint : Annuler
+  Demarrage -> EnMarche : Programmer actionnaire
+  EnMarche -> Fin : Mise à jour de l'état
+Fin --> [*]
+@enduml

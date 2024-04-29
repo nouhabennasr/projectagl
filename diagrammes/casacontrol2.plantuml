@@ -1,0 +1,61 @@
+@startuml CasaControl
+
+left to right direction
+
+actor Utilisateur as u
+Package CasaControl {
+  usecase "Configurer un équipement électrique " as Confg
+  usecase "Afficher la liste des équipements électriques" as Liste
+  usecase "Se déconnecter" as Decon
+  usecase "Activer un équipement électrique" as Act
+  usecase "Désactiver un équipement électrique" as Des
+  usecase "Ajouter un équipement électrique non incrit" as Cond
+  usecase "Consulter l'état des équipements électriques" as Consu
+  usecase "Piloter des équipements électriques" as Pilot
+  usecase "S'authentifier" as Auth
+  usecase "Ajouter les équipements électriques" as Ajout
+  usecase "Supprimer les équipements électriques" as Supp
+
+
+}
+Confg .> Auth : include
+Liste .> Auth : include
+Decon .> Auth : include
+Consu .> Auth : include
+Pilot .> Auth : include
+Ajout .> Auth : include
+Supp .> Auth : include
+
+Cond .> Ajout : include
+
+
+
+Act .> Pilot: extend
+Des .> Pilot : extend
+
+
+u --> Liste
+u --> Confg
+u --> Consu
+u --> Pilot
+u --> Ajout
+u --> Supp
+u --> Decon
+
+
+
+Liste -[hidden]-> Confg : <<color(#FF0000)>>
+Liste -[hidden]-> Pilot : <<color(#00FF00)>>
+Liste -[hidden]-> Consu : <<color(#0000FF)>>
+Liste -[hidden]-> Ajout : <<color(#FF00FF)>>
+Liste -[hidden]-> Supp : <<color(#FFFF00)>> 
+u -[hidden]-> Liste : <<color(#FF0000)>>
+u -[hidden]-> Confg : <<color(#00FF00)>> 
+u -[hidden]-> Consu : <<color(#0000FF)>> 
+u -[hidden]-> Pilot : <<color(#FF00FF)>> 
+u -[hidden]-> Ajout : <<color(#FFFF00)>> 
+u -[hidden]-> Supp : <<color(#00FFFF)>> 
+
+
+
+@enduml

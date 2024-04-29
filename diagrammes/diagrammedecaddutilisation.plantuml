@@ -1,0 +1,25 @@
+@startuml Diagramme
+left to right direction
+
+actor Utilisateur as u
+
+Package CasaControl {
+  usecase "Ajouter un équipement électrique" as UC
+  usecase "Configurer un équipements électrique" as UC1
+  usecase "Supprimer un équipement électrique" as UC4
+  usecase "Consulter l'état d'un équipement électrique" as UC2
+  usecase "Piloter un équipement électrique" as UC3
+  usecase "Afficher la liste des équipements électriques" as UC5
+
+
+
+}
+
+u --> UC
+u --> UC1
+u --> UC4
+u --> UC2
+u --> UC3
+u --> UC5
+
+@enduml

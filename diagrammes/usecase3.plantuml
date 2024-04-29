@@ -1,0 +1,20 @@
+@startuml CasaControl
+left to right direction
+
+actor Utilisateur as u
+Package CasaControl {
+  usecase "Piloter les équipements électriques" as UC1
+  usecase "Activer un équipement électrique" as UC3
+  usecase "Désactiver un équipement électrique" as UC4
+  usecase "S'authentifier" as UC2
+
+}
+
+UC1 .> UC4 : extend
+UC1 .> UC3 : extend
+UC1 .> UC2 : include
+
+u --> UC1
+
+
+@enduml

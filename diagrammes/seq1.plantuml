@@ -1,0 +1,54 @@
+@startuml diagramme
+
+actor Utilisateur
+participant Interface_de_commande
+participant Serveur
+
+activate Utilisateur
+
+Utilisateur->>Interface_de_commande: Demande_affichage_interface()
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 1:Demande_affichage_interface()
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 2:Traitement_demande()
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: Afficher_interface()
+deactivate Interface_de_commande
+
+activate Utilisateur
+Utilisateur->>Interface_de_commande: Saisir_login_mot_de_passe()
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 3:Saisie_login_mot_de_passe()
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 4:verifier_login_mot_de_passe()
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: traitement_demande()
+deactivate Interface_de_commande
+
+activate Utilisateur
+Utilisateur->>Interface_de_commande: vérification_effectuéee()
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 3:vérification_effectuéee()
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 4:confirmer_accès()
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: confirmer_accès()
+deactivate Interface_de_commande
+
+deactivate Utilisateur
+@enduml

@@ -1,0 +1,173 @@
+@startuml DiagrammeDeClasse1
+
+class Utilisateur {
+  + idUtilisateur: integer
+  + nom: string
+  + prenom: string
+  + login: string
+  + motDePasse: string
+  + email: string
+  + Constructeur()
+  - ajouterEquipementElectrique() 
+    - configurerEquipementElectrique() 
+    - supprimerEquipement()
+    - consulterEtatEquipementElectrique()
+    - piloterEquipementElectrique() 
+    - activerEquipement() 
+    - desactiverEquipement()
+    - sAuthentifier() 
+    - afficherListeEquipements() 
+}
+
+class actionneur {
+  + Id: integer
+  + Nom: string
+  + Position: string
+  + Description: string
+  + Constructeur()
+}
+
+abstract class Capteur {
+  - idCapteur: integer
+  - nomCapteur: string
+  - positionCapteur: string
+  - descriptionCapteur: string
+
+  - EnvoyerSignal()
+  - DebutExecution()
+  - FinExecution()
+}
+
+class Cap_Conso extends Capteur {
+  - DetecterConsommation()
+  + Constructeur()
+}
+
+class Cap_Eclairage extends Capteur {
+  - DetecterEclairage()
+  + Constructeur()
+}
+
+class Cap_Temperature extends Capteur {
+  - DetecterTemperature()
+  + Constructeur()
+}
+
+class Detecteur_Gaz extends Capteur {
+  - DetecterGaz()
+  - Constructeur()
+}
+
+class Cap_Incendie extends Capteur {
+  - DetecterIncendie()
+  + Constructeur()
+}
+
+class Cap_Mouvement extends Capteur {
+  - DetecterMouvement()
+  + Constructeur()
+}
+
+class Box_Domotique {
+  - idBoxDomotique: integer
+  - nomBoxDomotique: string
+  + Constructeur()
+    - gererEquipements()
+    - traiterDonneesEnvironnementales()
+    - envoyerCommandes()
+    - gererAlertes()
+    - communiquerAvecUtilisateur()
+    - gererStatistiques()
+}
+
+class SMART_HOME {
+  + idUtilisateur: integer
+  + nom: string
+  + personne: Personne 
+  + actionneur: actionneur 
+  + capteur: Capteur 
+  + boxDomotique: Box_Domotique 
+  -  ControlerLacces()
+  - ControlerLeclairage()
+  - ControlerVocale()
+  - ControlerVolume()
+  - ControlerTemperature()
+  - SurveillerLaMaison()
+  - EconomiserEnergie()
+}
+
+abstract class Equipement {
+  - idEquipement: int
+  + nomEquipement: string
+  + typeEquipement: string
+  + marqueEquipement: string
+  + modeFonctionnement: string
+  + piece: Piece  
+  toString(): string
+}
+
+class Lampe extends Equipement {
+  + puissance: int
+  + couleur: string
+  + luminosite: int  
+  - allumer(): void
+  - eteindre(): void
+  - regler_luminosite(nouvelle_luminosite: int): void
+}
+
+class Climatisation extends Equipement {
+  + temperatureDesiree: float
+  + puissance: int
+  - allumer(): void
+  - eteindre(): void
+  - reglerTemperature(nouvelleTemperature: float): void
+}
+
+class SystemeAlarme extends Equipement {
+  + codeAlarme: string
+  + etatAlarme: boolean  
+  - activer(): void
+  - desactiver(code: string): void
+}
+
+class Porte extends Equipement {
+  + etatPorte: boolean  
+  - ouvrir(): void
+  - fermer(): void
+}
+
+abstract class Piece {
+  - idPiece: int
+  + nomPiece: string
+  + etage: int
+  + superficie: float
+  + equipements : array
+  - afficher_equipements(): void
+}
+
+
+
+class Alerte {
+  - idAlerte: integer
+  - nomAlerte: string
+  - dateAlerte: date
+  - typeAlerte: string
+  + Constructeur()
+}
+SMART_HOME "1"   *-- "1..*" Piece : posséder
+SMART_HOME "1"   *-- "0..*" Equipement : contrôler
+SMART_HOME "1..*"  *-- "1..*" Utilisateur : posséder
+SMART_HOME "1"   *-- "1..*" Box_Domotique : posséder
+SMART_HOME "1"   *-- "1..*" Alerte : gérer
+Utilisateur "1..*"  --> "0..*" Alerte : recevoir
+
+
+
+Box_Domotique "1"  *-- "1..*" Capteur : côntroler
+Capteur "1" --> "1..*" Alerte : Déclencher
+Box_Domotique "1" *-- "1..*" actionneur : côntroler
+Box_Domotique "1" --> "1..*" Equipement : Contrôler
+Capteur "1..*" --> "1..1" Equipement : Envoyer des données environnementales
+Equipement "1..*" --> "1..1" Piece : Se situer dans
+actionneur "1..* " --> "1..1" Equipement : agir sur
+@enduml

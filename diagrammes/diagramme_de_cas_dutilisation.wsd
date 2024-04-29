@@ -1,0 +1,13 @@
+@startuml diagramme de cas d'Utilisation
+actor Utilisateur as User
+rectangle "Utilisation du système domotique" {
+    usecase "Contrôle de l'éclairage" as UCE
+    usecase "Gestion de l'économie d'énergie" as UGE
+    usecase "Surveillance de la maison" as USM
+    usecase "Automatisation des tâches" as UAT
+    
+    User --> UCE : Allumer/Éteindre\nAjuster l'intensité ou la couleur\nProgrammer des scénarios
+    User --> UGE : Optimiser la consommation\ndétecter les gaspillages
+    User --> USM : Surveiller la maison\ndétecter intrusions, fuites, incendies\nrecevoir alertes en cas d'événements anormaux
+    User --> UAT : Contrôler la musique\nOuvrir/Fermer portes et volets\nà distance pour les visiteurs autorisés
+}

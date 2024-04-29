@@ -1,0 +1,102 @@
+@startuml SimplifiedClassDiagram
+
+class Utilisateur {
+  + idUtilisateur: integer
+  + nom: string
+  + prenom: string
+  + login: string
+  + motDePasse: string
+  + email: string
+}
+
+class actionneur {
+  + Id: integer
+  + Nom: string
+  + Position: string
+  + Description: string
+}
+
+abstract class Capteur {
+  - idCapteur: integer
+  - nomCapteur: string
+  - positionCapteur: string
+  - descriptionCapteur: string
+}
+
+class Cap_Conso extends Capteur {
+}
+
+class Cap_Eclairage extends Capteur {
+}
+
+class Cap_Temperature extends Capteur {
+}
+
+class Detecteur_Gaz extends Capteur {
+}
+
+class Cap_Incendie extends Capteur {
+}
+
+class Cap_Mouvement extends Capteur {
+}
+
+class Box_Domotique {
+  - idBoxDomotique: integer
+  - nomBoxDomotique: string
+}
+
+class SMART_HOME {
+  + idSMARTHOME: integer
+  + nom: string
+}
+
+abstract class Equipement {
+  - idEquipement: int
+  + nomEquipement: string
+  + typeEquipement: string
+}
+
+class Lampe extends Equipement {
+}
+
+class Climatisation extends Equipement {
+}
+
+class SystemeAlarme extends Equipement {
+}
+
+class Porte extends Equipement {
+}
+
+abstract class Piece {
+  - idPiece: int
+  + nomPiece: string
+  + etage: int
+}
+
+class Alerte {
+  - idAlerte: integer
+  - nomAlerte: string
+  - dateAlerte: date
+  - typeAlerte: string
+}
+
+SMART_HOME "1"   *-- "1..*" Piece : posséder
+SMART_HOME "1"   *-- "0..*" Equipement : contrôler
+SMART_HOME "1..*"  *-- "1..*" Utilisateur : posséder
+SMART_HOME "1"   *-- "1..*" Box_Domotique : posséder
+SMART_HOME "1"   *-- "1..*" Alerte : gérer
+Utilisateur "1..*"  --> "0..*" Alerte : recevoir
+
+
+
+Box_Domotique "1"  *-- "1..*" Capteur : côntroler
+Capteur "1" --> "1..*" Alerte : Déclencher
+Box_Domotique "1" *--  "1..*" actionneur : côntroler
+Box_Domotique "1" --> "1..*" Equipement : Contrôler
+Capteur "1..*" --> "1..1" Equipement : Envoyer des données environnementales
+Equipement "1..*" --> "1..1" Piece : Se situer dans
+actionneur "1..* " --> "1..1" Equipement : agir sur
+
+@enduml

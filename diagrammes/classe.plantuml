@@ -1,0 +1,125 @@
+@startuml DiagrammeDeClasse2
+
+class Personne {
+  + idUtilisateur: integer
+  + nom: string
+  + prenom: string
+  + login: string
+  + motDePasse: string
+  + email: string
+  + Constructeur()
+}
+
+class Actionnaire {
+  + Id: integer
+  + Nom: string
+  + Position: string
+  + Description: string
+  + Constructeur()
+}
+
+abstract class Capteur {
+  - idCapteur: integer
+  - nomCapteur: string
+  - positionCapteur: string
+  - descriptionCapteur: string
+
+  + EnvoyerSignal()
+  + DebutExecution()
+  + FinExecution()
+}
+
+class Cap_Conso extends Capteur {
+  + DetecterConsommation()
+  + Constructeur()
+}
+
+class Cap_Eclairage extends Capteur {
+  + DetecterEclairage()
+  + Constructeur()
+}
+
+class Cap_Temperature extends Capteur {
+  + DetecterTemperature()
+  + Constructeur()
+}
+
+class Detecteur_Gaz extends Capteur {
+  + DetecterGaz()
+  + Constructeur()
+}
+
+class Cap_Incendie extends Capteur {
+  + DetecterIncendie()
+  + Constructeur()
+}
+
+class Cap_Mouvement extends Capteur {
+  + DetecterMouvement()
+  + Constructeur()
+}
+
+class Box_Domotique {
+  - idBoxDomotique: integer
+  - nomBoxDomotique: string
+  + Constructeur()
+}
+
+class SMART_HOME {
+  + idUtilisateur: integer
+  + nom: string
+  + personne: Personne 
+  + actionnaire: Actionnaire 
+  + capteur: Capteur 
+  + boxDomotique: Box_Domotique 
+  + AjouterEquipementElectrique()
+  + ConfigurerEquipementElectrique()
+  + SupprimerEquipementElectrique()
+  + ConsulterEtatEquipementElectrique()
+  + PiloterEquipementElectrique()
+  + AfficherListeEquipementsElectriques()
+  + ControlerLacces()
+  + ControlerLeclairage()
+  + ControlerVocale()
+  + ControlerVolume()
+  + ControlerTemperature()
+  + SurveillerLaMaison()
+  + EconomiserEnergie()
+}
+
+class Statistiques {
+  - idStatistiques: integer
+  - nomStatistiques: string
+  - dateStatistiques: date
+  + Constructeur()
+}
+
+class Alerte {
+  - idAlerte: integer
+  - nomAlerte: string
+  - dateAlerte: date
+  - typeAlerte: string
+  + Constructeur()
+}
+
+class Administrateur extends Personne {
+  + idAdministrateur: integer
+  + autreAttributAdmin: type
+  + Constructeur()
+}
+
+class Utilisateur extends Personne {
+  + idUtilisateur: integer
+  + autreAttributUser: type
+  + Constructeur()
+}
+
+SMART_HOME "1"  o-- "1..*"  Personne : posséder
+SMART_HOME "1"  o-- "1..*" Capteur : posséder
+SMART_HOME "1"  o-- "1..*" Actionnaire : posséder
+Box_Domotique "1"  --> "1..*" Statistiques : générer
+Box_Domotique "1"  --> "1..*" Capteur : côntroler
+Box_Domotique "1" --> "1" Alerte : avoir
+Box_Domotique "1" --> "1..*" Actionnaire : côntroler
+
+@enduml

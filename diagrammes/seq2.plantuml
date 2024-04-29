@@ -1,0 +1,54 @@
+@startuml diagramme
+
+actor Utilisateur
+participant Interface_de_commande
+participant Serveur
+
+activate Utilisateur
+
+Utilisateur->>Interface_de_commande: Demande_activation_equipement()
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 1:Demande_activation_equipement()
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 2:Liste_equipements_disponibles()
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: Afficher_liste_equipements(liste_equipements)
+deactivate Interface_de_commande
+
+activate Utilisateur
+Utilisateur->>Interface_de_commande: Selectionner_equipement(id_equipement)
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 3:Selectionner_equipement(id_equipement)
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 4:Details_equipement(id_equipement, actions_equipement)
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: Afficher_details_equipement(details_equipement)
+deactivate Interface_de_commande
+
+activate Utilisateur
+Utilisateur->>Interface_de_commande: Demande_activation_equipement(id_equipement)
+
+activate Interface_de_commande
+Interface_de_commande->>Serveur: 5:Demande_activation_equipement(id_equipement)
+deactivate Interface_de_commande
+
+activate Serveur
+Serveur->>Interface_de_commande: 6:Confirmation_activation_equipement()
+deactivate Serveur
+
+activate Interface_de_commande
+Interface_de_commande->>Utilisateur: Afficher_confirmation_activation()
+deactivate Interface_de_commande
+
+deactivate Utilisateur
+@enduml

@@ -1,0 +1,13 @@
+@startuml CasaControl
+left to right direction
+
+actor Utilisateur as u
+Package CasaControl {
+  usecase "Gérer la plateforme domotique" as UC1
+  usecase "S'authentifier" as UC2
+}
+UC1 .> UC2 : include
+u --> UC1
+
+
+@enduml
