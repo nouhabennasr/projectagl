@@ -13,7 +13,7 @@ Institut des Hautes Etudes Commerciales de Carthage
 
 
 
-1.Introduction du projet :
+ 🚩 1.Introduction du projet :
 
 
 Choix du sujet et description générale :
@@ -81,7 +81,7 @@ Cette application sera embarquée dans le Raspberry Pi.
 
 
 
-2.Spécifications du projet :
+ 🚩 2.Spécifications du projet :
 
 a) Notions de base et contraintes du projet :
 
@@ -146,7 +146,7 @@ Surveillance de la maison, en temps réel et à distance : détection des intrus
 Automatisation des tâches : la possibilité d’ouvrir/ fermer les portes et les volets, à distance pour les visiteurs autorisés. 
 
 
-3) Les diagramme de cas d’utilisation :
+ 🚩3) Les diagramme de cas d’utilisation :
 
 
 a)Diagramme de cas d’utilisation générale de notre système domotique :
@@ -238,7 +238,7 @@ Configurer un équipement électrique :
 L'utilisateur peut configurer les paramètres d'un équipement électrique existant tels que son nom, sa description et son groupe.
 
 
-4)Élection des cas d’utilisation pour le sprint 1; Priorité des cas d’utilisation :
+ 🚩 4)Élection des cas d’utilisation pour le sprint 1; Priorité des cas d’utilisation :
 
 
 Dans l'ordre de priorité des cas d'utilisation pour un système domotique, l'ajout d'un équipement est placé en première position ( must ) , suivi de la liste des équipements disponibles (required )  et enfin de l'activation des équipements ( must ).
