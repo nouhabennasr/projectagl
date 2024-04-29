@@ -1,4 +1,17 @@
 # projectagl
+![Capture d'écran 2024-04-29 205736](https://github.com/nouhabennasr/projectagl/assets/168307999/7d5234f2-c2a5-44d5-a4bf-99ef69738d64)
+
+****************************************
+Ministère de l’Enseignement Supérieur
+****************************************
+Université de Carthage
+****************************************
+Institut des Hautes Etudes Commerciales de Carthage
+****************************************
+
+![Capture d'écran 2024-04-29 205936](https://github.com/nouhabennasr/projectagl/assets/168307999/f413efd9-1a0f-4ab9-9c0a-f00ef6b34c79)
+
+
 
 1.Introduction du projet :
 
@@ -605,6 +618,429 @@ Postconditions :
 6.Suivi du projet avec Classroom et GitHub :
 
 Les spécifications sont consultables sur le fichier Markdown « readme.md » à la racine de notre projet GithubAGL et le diagramme de cas d’utilisation « * .pu » dans un répertoire Diagrammes.
+
+
+Aspect statique :
+
+Description textuelle des classes principales :
+
+Un utilisateur peut avoir une ou plusieurs maisons intelligentes.
+
+Un utilisateur est associé à une box domotique.
+
+Une maison est la propriété d’un utilisateur ou plus.
+
+Chaque maison ne peut avoir qu’une box et une box ne peut avoir qu’une seule maison.
+
+Une box contrôle plusieurs actionneurs et plusieurs capteurs.
+
+
+Une box détecte une ou plusieurs alertes.
+
+Une box domotique est associée à une liste de capteurs et d'actionneurs.
+
+Une box domotique agrège les données des capteurs.
+
+Une box domotique contrôle les actionneurs.  
+
+Une alerte est détectée par un et une seule box.
+
+Un capteur ou un actionneur n’est connecté qu’à une box. 
+| Classe        | Attribut          | Type    | Visibilité |
+|---------------|-------------------|---------|------------|
+| Smart_home    | idsmarthome       | integer | privé      |
+|               | nom               | string  | privé      |
+| Box_domotique | idboxdomotique    | integer | privé      |
+|               | nomboxdomotique   | string  | privé      |
+| Actionneur    | id                | integer | privé      |
+|               | nom               | string  | privé      |
+|               | position          | string  | privé      |
+|               | description       | string  | privé      |
+| Equipement    | idEquipement      | integer | privé      |
+|               | nomEquipement     | string  | privé      |
+|               | typeEquipement    | string  | privé      |
+| Pièce         | idPiece           | integer | privé      |
+|               | nomPiece          | string  | privé      |
+|               | étage             | string  | privé      |
+| Capteur       | idCapteur         | integer | privé      |
+|               | nomCapteur        | string  | privé      |
+|               | positionCapteur   | string  | privé      |
+|               | descriptionCapteur| string  | privé      |
+| Utilisateur   | idUtilisateur     | integer | privé      |
+|               | nom               | string  | privé      |
+|               | prénom            | string  | privé      |
+|               | login             | string  | privé      |
+|               | motDePasse        | string  | privé      |
+|               | email             | string  | privé      |
+| Alerte        | idAlerte          | integer | privé      |
+|               | nomAlerte         | string  | privé      |
+|               | dateAlerte        | string  | privé      |
+|               | typeAlerte        | string  | privé      |
+
+Description textuelle :
+
+        Le diagramme de classe présenté représente les relations entre les différentes classes d'un système domotique “ CasaControl “.. Il met en évidence les relations reliant les classes.
+
+Utilisateur : Identifié par un ID unique, il possède des informations telles que le nom, le prénom, le login, le mot de passe et l'email. Il peut s'authentifier dans le système.
+
+Actionneur : Il agit sur l'environnement en fonction des commandes. Chaque actionneur possède un ID, un nom, une position et une description.
+
+Capteur : Classe abstraite représentant divers types de capteurs (consommation, éclairage, température, etc.). Les sous-classes spécifient les types de détection. Chaque capteur possède un ID, un nom, une position et une description, avec des méthodes pour envoyer un signal et démarrer/terminer une exécution.
+
+Box Domotique : Elle coordonne les dispositifs de la maison intelligente, possédant un ID et un nom.
+
+SMART HOME : Représente le patron de conception (façade), avec des références vers l'utilisateur, les actionneurs, les capteurs et la box domotique. Il offre des méthodes pour vérifier le contrôle du système.
+
+Équipement : Classe abstraite représentant les équipements de la maison (lampe, climatisation, alarme, etc.), avec des sous-classes spécifiant les types d'équipements. Chaque équipement possède un ID, un nom, un type, une marque, un mode de fonctionnement et une référence vers la pièce où il est installé.
+
+Pièce : Représente les différentes pièces de la maison, possédant un ID, un nom, un numéro d'étage et une superficie. Elle offre une méthode pour afficher les équipements présents.
+
+Alerte : Générée par le système en cas de situation inhabituelle, chaque alerte possède un ID, un nom, une date et un type.
+
+Actionneur: Représente un actionneur générique qui peut effectuer des actions sur les équipements.
+
+Utilisateur: Représente un utilisateur du système domotique qui peut interagir avec la box et les équipements.               
+
+
+![code]![Capture d'écran 2024-04-29 191929](https://github.com/nouhabennasr/projectagl/assets/168307999/5a70101b-5a42-4309-8cb2-845c1941720c)
+![code]![Capture d'écran 2024-04-29 192213](https://github.com/nouhabennasr/projectagl/assets/168307999/91644d19-c2e6-4b84-b0b0-2d553c0ad78a)
+![code]![Capture d'écran 2024-04-29 192325](https://github.com/nouhabennasr/projectagl/assets/168307999/02ca6c4d-2e8d-433a-a376-a8df3f8abce2)
+![code]![image](https://github.com/nouhabennasr/projectagl/assets/168307999/b3a2702e-fd63-442a-a10f-3bac24c1b701)
+
+Figure 1 : Diagramme de classe préliminaire de notre système domotique
+
+1. Diagramme de séquence :
+
+     A.  Ajouter un équipement électrique :
+
+Quand un utilisateur veut commander son réseau domotique, il peut accéder à l’interface de la plateforme dans son téléphone portable ou son PC et il saisit son login et son mot de passe. 
+Les entrées seront vérifiées dans l’application. 
+Si tout est bien, l’interface de pilotage des équipements électriques sera affichée.
+
+Acteur principal : Utilisateur
+Scénario nominal :
+
+L'utilisateur se connecte au système CasaControl.
+L'interface de commande envoie les identifiants (login et mot de passe) au serveur pour vérification.
+Le serveur valide les identifiants.
+L'interface de commande affiche l'interface d’ajout des équipements électriques à l'utilisateur.
+L'utilisateur accède à la section d’ajout des équipements électriques dans le système CasaControl.
+Le système affiche un formulaire à remplir avec les informations nécessaires telles que le type, la marque, le modèle, etc.
+L'utilisateur remplit le formulaire avec les détails de l'équipement à ajouter.
+Après avoir saisi les informations requises, l'utilisateur confirme l'ajout de l'équipement.
+Le système valide les informations et ajoute le nouvel équipement à la liste des équipements électriques.
+
+
+Scénario alternatif 1:
+
+L'utilisateur demande l'affichage de l'interface de l’ajout des équipements.
+L'interface de commande envoie les identifiants (login et mot de passe) au serveur pour vérification.
+Le serveur détecte que les identifiants sont invalides.
+L'interface de commande affiche un message d'erreur à l'utilisateur.
+
+Scénario alternatif 2:
+
+L'utilisateur demande l'affichage de l'interface de l’ajout des équipements.
+L'interface de commande affiche l'interface d’ajout des équipements électriques à l'utilisateur.
+L'utilisateur accède à la section d’ajout des équipements électriques dans le système CasaControl.
+Le système affiche un formulaire à remplir avec les informations nécessaires telles que le type, la marque, le modèle, etc.
+L'utilisateur remplit le formulaire avec les détails de l'équipement à ajouter.
+Après avoir saisi les informations requises, l'utilisateur confirme l'ajout de l'équipement.
+Le système ne valide pas les informations et affiche un message pour dire que l’équipement existe déjà.
+![code]![Capture d'écran 2024-04-29 192658](https://github.com/nouhabennasr/projectagl/assets/168307999/8c489b7b-717a-4b2b-9f69-6fd2d107d4f1)
+Figure 2 : Diagramme de séquence :
+ « Ajouter un équipement électrique »:
+![code]![Capture d'écran 2024-04-29 192809](https://github.com/nouhabennasr/projectagl/assets/168307999/0458ba6a-40a4-4e65-8ef8-8c6dd2c7ea19)
+![code]!![Capture d'écran 2024-04-29 194503](https://github.com/nouhabennasr/projectagl/assets/168307999/d95f93c0-6017-4a08-a199-2e2c0b916ab7)
+
+
+ B. Activer un équipement électrique :
+
+Pour activer un équipement électrique, l’utilisateur clique sur “ Activer un équipement “. 
+On lui affiche la liste des équipements électriques et il choisit l’équipement qu’il veut activer. 
+Après que les actions associées à cet équipement soient affichées, il clique sur le bouton d’activation « ON ».
+Enfin, le message « équipement activé » sera affiché.
+
+ Scénario nominal : 
+
+L'utilisateur se connecte au système CasaControl.
+L'interface de commande envoie les identifiants (login et mot de passe) au serveur pour vérification.
+Le serveur valide les identifiants.
+L'interface de commande affiche l'interface d’ajout des équipements électriques à l'utilisateur.
+L'utilisateur accède à la section d’activer des équipements électriques dans le système CasaControl.
+Une liste d'équipements s'affiche à l'écran.
+L'utilisateur choisit l'équipement qu'il souhaite activer.
+Les actions associées à cet équipement sont affichées à l'utilisateur.
+L'utilisateur clique sur le bouton d'activation "ON".
+Un message de confirmation "Équipement activé" est affiché à l'utilisateur.
+
+
+
+Scénario alternatif :
+
+L'interface de commande affiche l'interface d’ajout des équipements électriques à l'utilisateur.
+L'utilisateur souhaite activer un équipement électrique.
+Il clique sur “ Activer un équipement “
+Une liste d'équipements s'affiche à l'écran.
+L'utilisateur choisit l'équipement qu'il souhaite activer.
+Les actions associées à cet équipement sont affichées à l'utilisateur.
+Cependant, le bouton d'activation "ON" est grisé ou indisponible.
+Un message d'erreur s'affiche, indiquant que l'équipement ne peut pas être activé pour une raison quelconque (peut-être un dysfonctionnement, une maintenance en cours, etc.).
+L'utilisateur est invité à contacter le service technique pour obtenir de l'aide ou des informations supplémentaires.
+![code]![Capture d'écran 2024-04-29 194655](https://github.com/nouhabennasr/projectagl/assets/168307999/9f16a601-8a91-4056-9a9b-bfb21a82ca17)
+![code]![Capture d'écran 2024-04-29 202152](https://github.com/nouhabennasr/projectagl/assets/168307999/02d79bda-b611-46a4-bc2c-426e450cf731)
+![code]![Capture d'écran 2024-04-29 202235](https://github.com/nouhabennasr/projectagl/assets/168307999/c8c12178-1c5a-47c0-9ba8-fe8baed2c900)
+C.Affichage de la liste des équipements électriques  : 
+
+L’utilisateur peut connaître la liste des équipements électriques sur le réseau domotique. 
+Tout d’abord, il clique sur “ Consulter la liste des équipements électriques “. 
+
+
+Scénario nominal :
+
+L'utilisateur souhaite connaître la liste des équipements disponibles sur le réseau domotique.
+Il clique  sur “ Consulter la liste des équipements “.
+La liste des équipements est affichée
+
+
+Scénario alternatif :
+
+L'utilisateur souhaite connaître la liste des équipements disponibles sur le réseau domotique.
+Il clique  sur “ Consulter la liste des équipements “.
+La liste des équipements est affichée
+Cependant, le système rencontre une erreur lors de la récupération des détails de l'équipement.
+Le système affiche un message d'erreur indiquant qu'il n'est pas possible de récupérer tous les détails de l'équipement pour le moment.
+L'utilisateur est invité à réessayer ultérieurement ou à contacter le support technique pour obtenir de l'aide.
+![code]![Capture d'écran 2024-04-29 202347](https://github.com/nouhabennasr/projectagl/assets/168307999/34427540-5570-4195-8e58-21d1fce3dc3c)
+![code]![Capture d'écran 2024-04-29 202523](https://github.com/nouhabennasr/projectagl/assets/168307999/b1a42892-a156-4ba3-bc03-52e4da585fb1)
+
+
+
+
+La conception détaillée est un document essentiel qui, s’il est bien étayé, nous permettra de restituer une réalisation de qualité.
+L’objectif de ce document est de fournir la feuille de route exhaustive et détaillée nécessaire à la réalisation technique de votre projet.
+![code]![Capture d'écran 2024-04-29 202721](https://github.com/nouhabennasr/projectagl/assets/168307999/615f6879-1884-4df8-a456-730cad97dda8)
+1-Raffinement du diagramme de classe préliminaire : 
+
+Identifier les classes et les relations : Vérifier et valider les classes déjà identifiées dans le diagramme de classe initial. Identifier de nouvelles classes si nécessaire en fonction des détails émergents.
+Spécifier les attributs et les méthodes : Examiner les attributs et les méthodes de chaque classe pour vous assurer qu'ils sont complets et précis. Ajouter des détails supplémentaires si nécessaire.
+Préciser les relations entre les classes : Affiner les relations entre les classes en définissant plus précisément le type de relation (agrégation, composition, association) et en spécifiant les cardinalités si elles ne sont pas claires.
+Gérer l'héritage : Si des hiérarchies de classes sont présentes, il faut clarifier les rôles et les responsabilités de chaque classe héritée. Il faut assurer que l'héritage est justifié et que les relations de sous-classe/super classe sont correctement définies.
+
+Documenter les contraintes et les règles métier : Ajouter toute contrainte ou règle métier importante qui doit être respectée dans le diagramme de classe.
+Vérifier la cohérence et la complétude : Assurer que le diagramme de classe est cohérent avec les autres documents de conception et qu'il est complet, couvrant tous les aspects importants du système.
+Finaliser la documentation : Une fois que le diagramme de classe a été raffiné et validé, assurer de documenter toutes les décisions prises et les détails ajoutés pour référence future.
+![code]![Capture d'écran 2024-04-29 202825](https://github.com/nouhabennasr/projectagl/assets/168307999/94f162e9-cbbd-481c-aa4b-ccc41403be81)
+![code]![Capture d'écran 2024-04-29 202904](https://github.com/nouhabennasr/projectagl/assets/168307999/261a178d-115c-4cf8-acd7-ce59585982c6)
+![code]![image](https://github.com/nouhabennasr/projectagl/assets/168307999/256215ec-a126-4f69-b8cc-8baee6297312)
+![code]![Capture d'écran 2024-04-29 203402](https://github.com/nouhabennasr/projectagl/assets/168307999/085cd18a-b0f4-4085-93d7-5387ed7edd31)
+
+
+L'encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d'une même entité, souvent appelée classe. 
+
+
+Les attributs d'une classe sont généralement déclarés comme privés pour limiter leur accès direct depuis l'extérieur de la classe. Pour permettre l'accès à ces attributs, des méthodes publiques, appelées getters et setters, sont utilisées. 
+
+
+Les getters permettent d'obtenir la valeur d'un attribut, tandis que les setters permettent de modifier sa valeur. Cette approche assure la sécurité et l'intégrité des données en contrôlant leur accès et leur modification. 
+
+
+En résumé, l'encapsulation garantit une meilleure modularité, une gestion efficace des données et une sécurité accrue du code en regroupant les données et en contrôlant leur accès via des méthodes publiques.
+![code]![Capture d'écran 2024-04-29 203659](https://github.com/nouhabennasr/projectagl/assets/168307999/d38b9566-8cb6-42d5-80b2-988a897768d1)
+
+2. Le diagramme de machines à état :
+Ce diagramme d'état de transition représente le cycle de vie d'un système domotique, en montrant les différents états dans lesquels le système peut se trouver et les transitions entre ces états. Voici une explication détaillée du diagramme :
+États :
+Éteint (Rose) : C'est l'état initial du système, où le système est éteint et inactif.
+
+Démarrage (Bleu Ciel) : Dans cet état, le système est en cours de démarrage, généralement initié par l'utilisateur ou un processus automatique extérieur.
+
+En Marche (Bleu Ciel) : C'est l'état dans lequel le système est pleinement opérationnel et exécute ses fonctions.
+
+Fin (Rose) : C'est l'état final du système, où le processus d'exécution est terminé.
+
+Transitions :
+De l'état initial éteint, le système peut passer à l'état Démarrage lorsqu'un utilisateur ou un processus démarre le système en appuyant sur le bouton Démarrer ou à travers une condition extérieure.
+Depuis l'état Démarrage, le système peut revenir à l'état Éteint si le processus de démarrage est annulé, généralement en appuyant sur le bouton "Annuler" ou un problème technique de démarrage.
+De l'état Démarrage, le système peut passer à l'état En Marche une fois que l'actionneur électrique est programmé pour démarrer le système.
+Depuis l'état En Marche, le système peut passer à l'état Fin une fois que la mise à jour de l'état est effectuée, indiquant que le processus d'exécution est terminé.
+De l'état Fin, le système revient à l'état initial éteint, prêt pour un nouveau cycle d'exécution.
+—> Ce diagramme illustre le flux de contrôle dans le système domotique, montrant comment le système évolue d'un état à un autre en réponse aux actions de l'utilisateur ou aux événements internes.
+—> Il fournit une vue globale du fonctionnement du système, mettant en évidence les différents scénarios possibles et les transitions entre les États.
+
+![code]![Capture d'écran 2024-04-29 203802](https://github.com/nouhabennasr/projectagl/assets/168307999/c7714b67-ad0d-4e17-9042-be9f18df6b52)
+![code]![Capture d'écran 2024-04-29 203843](https://github.com/nouhabennasr/projectagl/assets/168307999/d16a1c54-7850-4114-89a0-c3237d6793c2)
+
+1. 2ème raffinement du 2ème diagramme de classe : 
+
+
+A)Navigabilite
+On a ajouté des flèches de navigabilité entre les classes pour représenter les relations entre elles. 
+Par exemple, on a relié la classe Utilisateur à la classe SMART_HOME avec une multiplicité de 1 à plusieurs (1..*), ce qui signifie qu'un utilisateur peut posséder plusieurs maisons intelligentes : relation unidirectionnelle puisque de base toutes les bases sont bidirectionnelles.
+
+
+A)Traduction des attributs dérivés:
+On a également introduit des attributs dérivés pour les classes Lampe et Climatisation, ce qui permet de calculer certains attributs en fonction d'autres attributs de la classe. 
+
+
+Par exemple, on a ajouté l'attribut consommationElectrique pour la classe Lampe, calculé en fonction de la puissance et de la luminosité de la lampe.
+
+![code]![Capture d'écran 2024-04-29 204825](https://github.com/nouhabennasr/projectagl/assets/168307999/d2a277b5-73cf-46f3-931d-ff19666d5bf4)
+![code]![Capture d'écran 2024-04-29 205057](https://github.com/nouhabennasr/projectagl/assets/168307999/e27776b2-a00a-4974-a732-84fa011ac86c)
+![code]![Capture d'écran 2024-04-29 205129](https://github.com/nouhabennasr/projectagl/assets/168307999/d80a6a66-2ef1-48c0-87c1-f49105217b1b)
+![code]![Capture d'écran 2024-04-29 205205](https://github.com/nouhabennasr/projectagl/assets/168307999/27e1fff6-5369-4efb-9db8-187288946b30)
+![code]![Capture d'écran 2024-04-29 205241](https://github.com/nouhabennasr/projectagl/assets/168307999/05d80e3e-0af9-4a2c-ab55-1091bc6c7cbe)
+
+2. Invariants :
+
+
+A‐ Invariants :
+
+
+Construction de l'invariant d'au moins une classe importante :
+
+
+Un invariant est une condition qui doit toujours être vraie pour une instance de classe donnée à tout moment de son cycle de vie. C'est une sorte de règle ou de contrainte que chaque instance d'une classe doit respecter pour garantir un comportement cohérent du système.
+
+
+Pour illustrer la construction de l'invariant d'une classe importante, prenons l'exemple de la classe Capteur dans notre système domotique.
+Voici un exemple d'invariant :
+
+
+Invariant de la classe Capteur :
+
+
+Chaque capteur doit avoir un identifiant unique.
+
+
+Un capteur doit être associé à une pièce de la maison.
+
+
+Un capteur doit être actif ou inactif. 
+
+
+Il ne peut pas être dans un état indéterminé.
+
+
+Les données collectées par un capteur doivent être valides et cohérentes par rapport à son type (par exemple, un capteur de température ne doit pas rapporter des données de luminosité).
+
+
+Un capteur ne peut pas être associé à plusieurs équipements en même temps.
+.
+
+
+La position du capteur ne doit pas être nulle.
+
+
+—> Ces invariants garantissent que les instances de la classe Capteur fonctionnent de manière fiable et cohérente dans le système domotique, ce qui contribue à la stabilité et à la sécurité globales du système. 
+
+
+
+
+
+
+La formule en logique propositionnelle de l'invariant de la classe capteur :
+
+
+Soient les propositions symboliques :
+
+
+Ui : L'identifiant unique du capteur 
+Pi : La pièce de la maison associée au capteur 
+Ai : L'état d'activation du capteur  (actif ou inactif).
+Di  : Les données collectées par le capteur 
+POi  : La position du capteur
+
+
+
+
+L'invariant peut être exprimé comme suit en logique propositionnelle :
+
+
+∀Capteur,
+
+
+(𝑈𝑖≠null)∧(𝑃𝑖≠null)∧(𝐴𝑖∈{actif,inactif})∧(𝐷𝑖≠null)∧(𝑇𝑖≠null)∧(𝑆𝑖≠null)∧(𝐹𝑖>0)∧(𝑅𝑖≠null)(Ui=null)∧(Pi=null)∧(Ai∈{actif,inactif})∧(Di=null)∧(POi≠nul)
+
+
+B‐ Tables de décisions des tests unitaires :
+
+
+Opération 1 : s’authentifier : la table de décision des tests unitaires.
+| Cas de test | Conditions                            | Résultat attendu |
+|-------------|--------------------------------------|------------------|
+| Test 1      | Utilisateur existe                   | T                |
+| Test 2      | Utilisateur inexistant               | F                |
+| Test 3      | Utilisateur avec mauvais mot de passe| F                |
+| Test 4      | Utilisateur avec login incorrect     | F                |
+
+Figure 2 : table de décision des tests unitaires pour l'opération s’authentifier
+
+
+
+Cette table de décision contient les différents cas de test pour l'opération s'authentifier() de la classe Utilisateur. 
+
+
+Chaque cas de test est décrit avec les conditions qui doivent être remplies et le résultat attendu de l'opération.
+
+
+Test 1: Vérifie si un utilisateur existe dans le système.
+
+
+Test 2: Vérifie le comportement lorsque l'utilisateur n'existe pas dans le système.
+
+
+Test 3: Vérifie le comportement lorsque l'utilisateur existe mais fournit un mot de passe incorrect.
+
+
+Test 4: Vérifie le comportement lorsque le login associé à son compte est invalide.
+
+
+Opération 2 : ajouter un équipement :  la table de décision des tests unitaires.
+
+| Cas de test | Conditions                                                | Résultat attendu |
+|-------------|----------------------------------------------------------|------------------|
+| Test 1      | Équipement existant                                      | T                |
+| Test 2      | Équipement inexistant                                    | F                |
+| Test 3      | Champs du formulaire d’ajout non nuls et non vides      | F                |
+
+Figure 3 : table de décision des tests unitaires pour l'opération ajouter un équipement
+
+
+Cette table de décision contient les différents cas de test pour l'opération ajouter_équipement () de la classe équipement. Chaque cas de test est décrit avec les conditions qui doivent être remplies et le résultat attendu de l'opération
+
+Test 1: Vérifie si un équipement existe.
+
+Test 2: Vérifie si un équipement est inexistant.
+
+Test 3: Vérifie le comportement concernant le formulaire d’ajout d’un équipement (champs non vides et non nuls).
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
