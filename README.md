@@ -273,6 +273,340 @@ Post-conditions : Ajout d’un équipement établi
 
 Le nouvel équipement électrique est ajouté avec succès au système CasaControl et est prêt à être utilisé par l'utilisateur.
 
+| Pré condition                        | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 |
+|-------------------------------------|--------|--------|--------|--------|--------|--------|
+| login (non nul et non vide)         | F      | T      | T      | T      | T      | T      |
+| mot de passe (non nul et non vide)  |        | F      | T      | T      | T      | T      |
+| client existe                       |        |        | F      | T      | T      | T      |
+| champs (non nuls et non vides)      |        |        |        | F      | T      | T      |
+| équipement inexistant               |        |        |        |        | F      | T      |
+| *Post condition*                    | *Test 1* | *Test 2* | *Test 3* | *Test 4* | *Test 5* | *Test 6* |
+| ajout d’un équipement à CasaControl| F      | F      | F      | F      | F      | T      |
+|-------------------------------------|--------|--------|--------|--------|--------|--------|
+| Nombre de jeux de tests             | 2      | 2      | 1      | n*2    | 1      | 1      |
+
+Description du cas d'utilisation : Activer un équipement électrique
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions :
+
+
+L'utilisateur est connecté au système CasaControl : login (non nul et non vide ) et mot de pass ( non nul et non vide )
+
+
+Le client existe.
+
+
+L’équipement est existant.
+
+
+L'équipement est fonctionnel.
+
+
+L’équipement est désactivé.
+
+
+Login(¬ null ∧ ¬ vide)(Λ)Mot de passe(¬ null ∧ ¬ vide)(Λ) client existant(Λ) équipement existant (Λ) équipement fonctionnel (Λ) équipement désactivé
+
+
+Post-conditions : Équipement activé
+
+
+Si l'activation est réussie, un message de confirmation "Équipement activé" est affiché à l'utilisateur et l'état de l'équipement est mis à jour.
+Si l'activation échoue, un message d'erreur indiquant la cause de l'échec est affiché à l'utilisateur.
+
+
+Table de décision des tests de validation :
+| Pré condition                     | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 |
+|----------------------------------|--------|--------|--------|--------|--------|--------|--------|
+| login (non nul et non vide)      | F      | T      | T      | T      | T      | T      | T      |
+| mot de passe (non nul et non vide) |        | F      | T      | T      | T      | T      | T      |
+| client existe                    |       |        | F      | T      | T      | T      | T      |
+| équipement existant              |        |        |        | F      | T      | T      | T      |
+| équipement fonctionnel           |        |        |        |        | F      | T      | T      |
+| équipement désactivé             |        |      |     |      |       |  F |     T |
+|----------------------------------||        |        |        |        |      |      |
+| *Post condition*                 |      |      |      |       |       |       |       |
+|equipement activé                 | F      | F      | F      | F      | F      | F      | T      |
+| Nombre de jeux de test           | 2      | 2      | 1      | 1      | 1      | 1      | 1      |
+
+
+
+Description du cas d'utilisation : Consulter la liste des équipements électriques
+
+Acteur principal : Utilisateur
+Préconditions :
+
+L'utilisateur est connecté au système CasaControl : login (non nul et non vide ) et mot de pass ( non nul et non vide )
+
+Le client existe.
+
+Des équipements existent. 
+
+Login(¬ null ∧ ¬ vide)(Λ)Mot de passe(¬ null ∧ ¬ vide)(Λ) client existant(Λ) équipements existants
+
+Post-conditions :
+
+La liste des équipements électriques est affichée à l'utilisateur.
+
+Table de décision des tests de validation :
+
+| Pré condition                     | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 |
+|----------------------------------|--------|--------|--------|--------|--------|
+| login (non nul et non vide)      | F      | T      | T      | T      | T      |
+| mot de passe (non nul et non vide) |        | F      | T      | T      | T      |
+| client existe                    |        |        | F      | T      | T      |
+| équipement existant              |        |        |        | F      | T      |
+|----------------------------------|        |        |        |        |        |
+| *Post condition*                 |        |        |        |        |        |
+| affichage de la liste des équipements à CasaControl | F | F | F | F | T |
+| Nombre de jeux de test           | 2      | 2      | 1      | n      | 1      |
+
+
+5). Scénarios d’utilisation des cas d’utilisation ( bonus ):
+
+
+Scénario 1 : Configuration des paramètres d'un équipement existant
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la section de configuration des équipements électriques dans le système CasaControl.
+
+
+L'utilisateur sélectionne l'équipement électrique qu'il souhaite configurer.
+
+
+Le système affiche les détails de l'équipement sélectionné, y compris son nom, sa description et ses paramètres actuels.
+
+
+L'utilisateur modifie les paramètres de l'équipement selon ses besoins, tels que son nom, sa description, ou d'autres paramètres spécifiques à cet équipement.
+
+
+Après avoir effectué les modifications, l'utilisateur confirme ses changements.
+
+
+Le système enregistre les nouvelles configurations de l'équipement électrique.
+
+
+Postconditions : 
+
+
+Les paramètres de l'équipement électrique sont mis à jour conformément aux modifications apportées par l'utilisateur.
+
+
+Scénario 2 : Ajout d'un nouvel équipement électrique
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la section d’ajout des équipements électriques dans le système CasaControl.
+
+
+Le système affiche un formulaire à remplir avec les informations nécessaires telles que le type, la marque, le modèle, etc.
+
+
+L'utilisateur remplit le formulaire avec les détails de l'équipement à ajouter.
+
+
+Après avoir saisi les informations requises, l'utilisateur confirme l'ajout de l'équipement.
+
+
+Le système valide les informations et ajoute le nouvel équipement à la liste des équipements électriques.
+
+
+Postconditions : 
+
+
+Le nouvel équipement électrique est ajouté avec succès au système CasaControl et est prêt à être utilisé par l'utilisateur.
+
+
+Scénario 3 : Suppression d'un équipement électrique existant
+
+
+Acteur principal : Utilisateur
+
+
+
+
+Préconditions :
+
+
+ L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la section de suppression des équipements électriques dans le système CasaControl.
+
+
+L'utilisateur sélectionne l'équipement électrique qu'il souhaite supprimer de la liste.
+
+
+Le système affiche une confirmation de suppression pour l'équipement sélectionné, demandant à l'utilisateur de confirmer son choix.
+
+
+L'utilisateur confirme sa décision de supprimer l'équipement électrique.
+
+
+Le système traite la demande de suppression et retire l'équipement électrique de la liste.
+
+
+Postconditions :
+
+
+ L'équipement électrique sélectionné est supprimé avec succès du système CasaControl, et ses données associées sont effacées de la base de données du système.
+
+
+
+
+Scénario 4 : Activation d'un équipement électrique
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la liste de pilotage des équipements électriques disponibles dans le système CasaControl.
+
+
+L'utilisateur recherche et sélectionne l'équipement électrique qu'il souhaite activer.
+
+
+Le système affiche l'état actuel de l'équipement, qui est probablement désactivé.
+
+
+L'utilisateur sélectionne l'option pour activer l'équipement et précise “Activer”.
+
+
+Le système envoie la commande d'activation à l'équipement sélectionné.
+
+
+L'équipement reçoit la commande et passe à l'état activé.
+
+
+Postconditions : 
+
+
+L'équipement électrique sélectionné est activé et prêt à être utilisé par l'utilisateur.
+
+
+Scénario 5 : Désactivation d'un équipement électrique
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la liste de pilotage des équipements électriques disponibles dans le système CasaControl.
+
+
+L'utilisateur recherche et sélectionne l'équipement électrique qu'il souhaite désactiver.
+
+
+Le système affiche l'état actuel de l'équipement, qui est probablement activé.
+
+
+L'utilisateur sélectionne l'option pour désactiver l'équipement et sélectionne “Désactiver”.
+
+
+Le système envoie la commande de désactivation à l'équipement sélectionné.
+
+
+L'équipement reçoit la commande et passe à l'état désactivé.
+
+
+Postconditions :
+
+
+ L'équipement électrique sélectionné est désactivé et arrête son fonctionnement.
+
+
+Scénario 6 : Affichage de la liste des équipements
+
+
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à la section d’affichage des équipements électriques dans le système CasaControl.
+
+
+Le système affiche la liste complète de tous les équipements électriques connectés.
+
+
+L'utilisateur examine la liste pour voir tous les équipements disponibles.
+
+
+Postconditions : 
+
+
+L'utilisateur a une vue globale de tous les équipements électriques connectés, ce qui facilite la gestion et le suivi.
+
+
+Scénario 7 : Consultation de l'état d'un équipement électrique
+Acteur principal : Utilisateur
+
+
+Préconditions : 
+
+
+L'utilisateur est connecté au système CasaControl.
+
+
+L'utilisateur accède à consultation des états des équipements électriques disponibles dans le système CasaControl.
+
+
+L'utilisateur sélectionne l'équipement électrique dont il souhaite consulter l'état.
+
+
+Le système affiche l'état actuel de l'équipement, y compris des informations telles que l'alimentation, la température, etc.
+
+
+L'utilisateur examine l'état de l'équipement pour surveiller ses performances ou diagnostiquer d'éventuels problèmes.
+
+
+Postconditions :
+
+
+ L'utilisateur a visualisé avec succès l'état actuel de l'équipement électrique sélectionné, ce qui lui
+
+
+6.Suivi du projet avec Classroom et GitHub :
+
+Les spécifications sont consultables sur le fichier Markdown « readme.md » à la racine de notre projet GithubAGL et le diagramme de cas d’utilisation « * .pu » dans un répertoire Diagrammes.
+
+
 
 
 
