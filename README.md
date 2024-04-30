@@ -1,5 +1,7 @@
 # projectagl
-![Capture d'écran 2024-04-29 205736](https://github.com/nouhabennasr/projectagl/assets/168307999/7d5234f2-c2a5-44d5-a4bf-99ef69738d64)
+![OIP (1)](https://github.com/nouhabennasr/projectagl/assets/168307999/2cf9d151-cd67-432a-b903-d422a4ab9f8f)
+
+
 
 ****************************************
 Ministère de l’Enseignement Supérieur
@@ -8,9 +10,12 @@ Université de Carthage
 ****************************************
 Institut des Hautes Etudes Commerciales de Carthage
 ****************************************
+![Blue Minimalist Smart Home Logo Design](https://github.com/nouhabennasr/projectagl/assets/168307999/49cbe121-3e0b-4258-86e2-a9721849046d)
 
-![Capture d'écran 2024-04-29 205936](https://github.com/nouhabennasr/projectagl/assets/168307999/f413efd9-1a0f-4ab9-9c0a-f00ef6b34c79)
+Atelier de Génie Logiciel : Document de specification, conception preliminaire 
+                            conception detaillée et preparation de tests unitaires 
 
+                 Réalisé par :Nouha ben nasr ,Salima Boudinar et Ines Mazgar
 
 
  🚩 1.Introduction du projet :
@@ -155,8 +160,9 @@ a)Diagramme de cas d’utilisation générale de notre système domotique :
 A ce stade là, nous présentons le diagramme de cas d’utilisation général de notre système domotique
 indiqué dans
  la figure 1 :
-![CAP]![Capture d'écran 2024-04-29 123711](https://github.com/nouhabennasr/projectagl/assets/168307999/10896dd5-e7a6-442d-9776-060e61a69d9c)
-![CAP]![Capture d'écran 2024-04-29 123822](https://github.com/nouhabennasr/projectagl/assets/168307999/564c1f74-87ab-438c-967b-926b696263a3)
+ ![cas d'utilisation général](https://github.com/nouhabennasr/projectagl/assets/168307999/e7c5688b-f368-4f21-ba2b-b2f24959f242)
+
+![Capture d'écran 2024-04-29 123822](https://github.com/nouhabennasr/projectagl/assets/168307999/564c1f74-87ab-438c-967b-926b696263a3)
 
 
 L’utilisateur doit s’authentifier afin de pouvoir gérer la liste des équipements électriques soit à distance soit localement.
@@ -166,8 +172,8 @@ b)Diagramme de cas d’utilisation restreint de notre système domotique :
 
 
 Le fonctionnement de notre système domotique peut être décrit par le cas d’utilisation de la figure 2 :
-![CAP]![Capture d'écran 2024-04-29 124001](https://github.com/nouhabennasr/projectagl/assets/168307999/d1e30396-a8e0-44fa-a6da-d713145cd438)
-![cap]!![image](https://github.com/nouhabennasr/projectagl/assets/168307999/f2968004-36d1-4706-a59c-fc408cb048ce)
+![Capture d'écran 2024-04-29 124001](https://github.com/nouhabennasr/projectagl/assets/168307999/d1e30396-a8e0-44fa-a6da-d713145cd438)
+![image](https://github.com/nouhabennasr/projectagl/assets/168307999/f2968004-36d1-4706-a59c-fc408cb048ce)
 
 La figure 2 résume les cas d’utilisation de l’utilisateur : « gérer la plateforme domotique » :
 
@@ -190,7 +196,7 @@ c)Diagramme de cas d’utilisation détaillé de “Piloter les équipements él
 Le fonctionnement de pilotage de la plateforme domotique peut être décrit par le cas
 d’utilisation. En effet, l’utilisateur distant a le choix de démarrer, arrêter les équipements
 électriques de notre système domotique.
-![cap]!![image](https://github.com/nouhabennasr/projectagl/assets/168307999/01afe037-1c47-4f70-bc05-4d6aafe18ac3)
+![image](https://github.com/nouhabennasr/projectagl/assets/168307999/01afe037-1c47-4f70-bc05-4d6aafe18ac3)
 
 
 « Activer un équipement électrique» :l’utilisateur peut allumer une lampe, ouvrir un volet ou bien activer le système d’alarme.
@@ -206,9 +212,9 @@ d)Diagramme de cas d’utilisation détaillé  :
 Le diagramme ci-dessous représente les fonctionnalités principales du système CasaControl, une plateforme de gestion domotique permettant aux utilisateurs de contrôler efficacement leurs équipements électriques.
 
 
-![cap]!![image](https://github.com/nouhabennasr/projectagl/assets/168307999/0f6154a3-e3a2-4ee8-a5f2-29ff7354a11a)
+![image](https://github.com/nouhabennasr/projectagl/assets/168307999/0f6154a3-e3a2-4ee8-a5f2-29ff7354a11a)
 
-![cap]!![Capture d'écran 2024-04-29 124559](https://github.com/nouhabennasr/projectagl/assets/168307999/96fd6a8d-ee32-4f9a-9e52-129b8dfe500b)
+![Capture d'écran 2024-04-29 124559](https://github.com/nouhabennasr/projectagl/assets/168307999/96fd6a8d-ee32-4f9a-9e52-129b8dfe500b)
 
 S'authentifier :
 Permet à l'utilisateur de se connecter au système CasaControl, assurant ainsi la sécurité et l'accès contrôlé aux fonctionnalités.
@@ -702,10 +708,12 @@ Actionneur: Représente un actionneur générique qui peut effectuer des actions
 Utilisateur: Représente un utilisateur du système domotique qui peut interagir avec la box et les équipements.               
 
 
-![code]![Capture d'écran 2024-04-29 191929](https://github.com/nouhabennasr/projectagl/assets/168307999/5a70101b-5a42-4309-8cb2-845c1941720c)
-![code]![Capture d'écran 2024-04-29 192213](https://github.com/nouhabennasr/projectagl/assets/168307999/91644d19-c2e6-4b84-b0b0-2d553c0ad78a)
-![code]![Capture d'écran 2024-04-29 192325](https://github.com/nouhabennasr/projectagl/assets/168307999/02ca6c4d-2e8d-433a-a376-a8df3f8abce2)
-![code]![image](https://github.com/nouhabennasr/projectagl/assets/168307999/b3a2702e-fd63-442a-a10f-3bac24c1b701)
+![diag rendu 2](https://github.com/nouhabennasr/projectagl/assets/168307999/c311bf17-b57e-4a3c-b144-63be08ac7554)
+
+
+![Capture d'écran 2024-04-29 192213](https://github.com/nouhabennasr/projectagl/assets/168307999/91644d19-c2e6-4b84-b0b0-2d553c0ad78a)
+![Capture d'écran 2024-04-29 192325](https://github.com/nouhabennasr/projectagl/assets/168307999/02ca6c4d-2e8d-433a-a376-a8df3f8abce2)
+![image](https://github.com/nouhabennasr/projectagl/assets/168307999/b3a2702e-fd63-442a-a10f-3bac24c1b701)
 
 Figure 1 : Diagramme de classe préliminaire de notre système domotique
 
@@ -747,11 +755,11 @@ Le système affiche un formulaire à remplir avec les informations nécessaires 
 L'utilisateur remplit le formulaire avec les détails de l'équipement à ajouter.
 Après avoir saisi les informations requises, l'utilisateur confirme l'ajout de l'équipement.
 Le système ne valide pas les informations et affiche un message pour dire que l’équipement existe déjà.
-![code]![Capture d'écran 2024-04-29 192658](https://github.com/nouhabennasr/projectagl/assets/168307999/8c489b7b-717a-4b2b-9f69-6fd2d107d4f1)
+[Capture d'écran 2024-04-29 192658](https://github.com/nouhabennasr/projectagl/assets/168307999/8c489b7b-717a-4b2b-9f69-6fd2d107d4f1)
 Figure 2 : Diagramme de séquence :
  « Ajouter un équipement électrique »:
-![code]![Capture d'écran 2024-04-29 192809](https://github.com/nouhabennasr/projectagl/assets/168307999/0458ba6a-40a4-4e65-8ef8-8c6dd2c7ea19)
-![code]!![Capture d'écran 2024-04-29 194503](https://github.com/nouhabennasr/projectagl/assets/168307999/d95f93c0-6017-4a08-a199-2e2c0b916ab7)
+![Capture d'écran 2024-04-29 192809](https://github.com/nouhabennasr/projectagl/assets/168307999/0458ba6a-40a4-4e65-8ef8-8c6dd2c7ea19)
+![Capture d'écran 2024-04-29 194503](https://github.com/nouhabennasr/projectagl/assets/168307999/d95f93c0-6017-4a08-a199-2e2c0b916ab7)
 
 
  B. Activer un équipement électrique :
@@ -787,9 +795,9 @@ Les actions associées à cet équipement sont affichées à l'utilisateur.
 Cependant, le bouton d'activation "ON" est grisé ou indisponible.
 Un message d'erreur s'affiche, indiquant que l'équipement ne peut pas être activé pour une raison quelconque (peut-être un dysfonctionnement, une maintenance en cours, etc.).
 L'utilisateur est invité à contacter le service technique pour obtenir de l'aide ou des informations supplémentaires.
-![code]![Capture d'écran 2024-04-29 194655](https://github.com/nouhabennasr/projectagl/assets/168307999/9f16a601-8a91-4056-9a9b-bfb21a82ca17)
-![code]![Capture d'écran 2024-04-29 202152](https://github.com/nouhabennasr/projectagl/assets/168307999/02d79bda-b611-46a4-bc2c-426e450cf731)
-![code]![Capture d'écran 2024-04-29 202235](https://github.com/nouhabennasr/projectagl/assets/168307999/c8c12178-1c5a-47c0-9ba8-fe8baed2c900)
+![Capture d'écran 2024-04-29 194655](https://github.com/nouhabennasr/projectagl/assets/168307999/9f16a601-8a91-4056-9a9b-bfb21a82ca17)
+![Capture d'écran 2024-04-29 202152](https://github.com/nouhabennasr/projectagl/assets/168307999/02d79bda-b611-46a4-bc2c-426e450cf731)
+![Capture d'écran 2024-04-29 202235](https://github.com/nouhabennasr/projectagl/assets/168307999/c8c12178-1c5a-47c0-9ba8-fe8baed2c900)
 C.Affichage de la liste des équipements électriques  : 
 
 L’utilisateur peut connaître la liste des équipements électriques sur le réseau domotique. 
@@ -811,15 +819,15 @@ La liste des équipements est affichée
 Cependant, le système rencontre une erreur lors de la récupération des détails de l'équipement.
 Le système affiche un message d'erreur indiquant qu'il n'est pas possible de récupérer tous les détails de l'équipement pour le moment.
 L'utilisateur est invité à réessayer ultérieurement ou à contacter le support technique pour obtenir de l'aide.
-![code]![Capture d'écran 2024-04-29 202347](https://github.com/nouhabennasr/projectagl/assets/168307999/34427540-5570-4195-8e58-21d1fce3dc3c)
-![code]![Capture d'écran 2024-04-29 202523](https://github.com/nouhabennasr/projectagl/assets/168307999/b1a42892-a156-4ba3-bc03-52e4da585fb1)
+![Capture d'écran 2024-04-29 202347](https://github.com/nouhabennasr/projectagl/assets/168307999/34427540-5570-4195-8e58-21d1fce3dc3c)
+![Capture d'écran 2024-04-29 202523](https://github.com/nouhabennasr/projectagl/assets/168307999/b1a42892-a156-4ba3-bc03-52e4da585fb1)
 
 
 
 
 La conception détaillée est un document essentiel qui, s’il est bien étayé, nous permettra de restituer une réalisation de qualité.
 L’objectif de ce document est de fournir la feuille de route exhaustive et détaillée nécessaire à la réalisation technique de votre projet.
-![code]![Capture d'écran 2024-04-29 202721](https://github.com/nouhabennasr/projectagl/assets/168307999/615f6879-1884-4df8-a456-730cad97dda8)
+![Capture d'écran 2024-04-29 202721](https://github.com/nouhabennasr/projectagl/assets/168307999/615f6879-1884-4df8-a456-730cad97dda8)
 1-Raffinement du diagramme de classe préliminaire : 
 
 Identifier les classes et les relations : Vérifier et valider les classes déjà identifiées dans le diagramme de classe initial. Identifier de nouvelles classes si nécessaire en fonction des détails émergents.
@@ -830,10 +838,10 @@ Gérer l'héritage : Si des hiérarchies de classes sont présentes, il faut cla
 Documenter les contraintes et les règles métier : Ajouter toute contrainte ou règle métier importante qui doit être respectée dans le diagramme de classe.
 Vérifier la cohérence et la complétude : Assurer que le diagramme de classe est cohérent avec les autres documents de conception et qu'il est complet, couvrant tous les aspects importants du système.
 Finaliser la documentation : Une fois que le diagramme de classe a été raffiné et validé, assurer de documenter toutes les décisions prises et les détails ajoutés pour référence future.
-![code]![Capture d'écran 2024-04-29 202825](https://github.com/nouhabennasr/projectagl/assets/168307999/94f162e9-cbbd-481c-aa4b-ccc41403be81)
-![code]![Capture d'écran 2024-04-29 202904](https://github.com/nouhabennasr/projectagl/assets/168307999/261a178d-115c-4cf8-acd7-ce59585982c6)
-![code]![image](https://github.com/nouhabennasr/projectagl/assets/168307999/256215ec-a126-4f69-b8cc-8baee6297312)
-![code]![Capture d'écran 2024-04-29 203402](https://github.com/nouhabennasr/projectagl/assets/168307999/085cd18a-b0f4-4085-93d7-5387ed7edd31)
+![Capture d'écran 2024-04-29 202825](https://github.com/nouhabennasr/projectagl/assets/168307999/94f162e9-cbbd-481c-aa4b-ccc41403be81)
+![Capture d'écran 2024-04-29 202904](https://github.com/nouhabennasr/projectagl/assets/168307999/261a178d-115c-4cf8-acd7-ce59585982c6)
+![image](https://github.com/nouhabennasr/projectagl/assets/168307999/256215ec-a126-4f69-b8cc-8baee6297312)
+![Capture d'écran 2024-04-29 203402](https://github.com/nouhabennasr/projectagl/assets/168307999/085cd18a-b0f4-4085-93d7-5387ed7edd31)
 
 
 L'encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d'une même entité, souvent appelée classe. 
@@ -846,7 +854,8 @@ Les getters permettent d'obtenir la valeur d'un attribut, tandis que les setters
 
 
 En résumé, l'encapsulation garantit une meilleure modularité, une gestion efficace des données et une sécurité accrue du code en regroupant les données et en contrôlant leur accès via des méthodes publiques.
-![code]![Capture d'écran 2024-04-29 203659](https://github.com/nouhabennasr/projectagl/assets/168307999/d38b9566-8cb6-42d5-80b2-988a897768d1)
+![DiagrammeDeClasse1](https://github.com/nouhabennasr/projectagl/assets/168307999/3f1fce58-0562-4f8c-a71c-e3e1ab88f7f8)
+
 
 2. Le diagramme de machines à état :
 Ce diagramme d'état de transition représente le cycle de vie d'un système domotique, en montrant les différents états dans lesquels le système peut se trouver et les transitions entre ces états. Voici une explication détaillée du diagramme :
@@ -868,8 +877,8 @@ De l'état Fin, le système revient à l'état initial éteint, prêt pour un no
 —> Ce diagramme illustre le flux de contrôle dans le système domotique, montrant comment le système évolue d'un état à un autre en réponse aux actions de l'utilisateur ou aux événements internes.
 —> Il fournit une vue globale du fonctionnement du système, mettant en évidence les différents scénarios possibles et les transitions entre les États.
 
-![code]![Capture d'écran 2024-04-29 203802](https://github.com/nouhabennasr/projectagl/assets/168307999/c7714b67-ad0d-4e17-9042-be9f18df6b52)
-![code]![Capture d'écran 2024-04-29 203843](https://github.com/nouhabennasr/projectagl/assets/168307999/d16a1c54-7850-4114-89a0-c3237d6793c2)
+![Capture d'écran 2024-04-29 203802](https://github.com/nouhabennasr/projectagl/assets/168307999/c7714b67-ad0d-4e17-9042-be9f18df6b52)
+![Capture d'écran 2024-04-29 203843](https://github.com/nouhabennasr/projectagl/assets/168307999/d16a1c54-7850-4114-89a0-c3237d6793c2)
 
 1. 2ème raffinement du 2ème diagramme de classe : 
 
@@ -885,11 +894,12 @@ On a également introduit des attributs dérivés pour les classes Lampe et Clim
 
 Par exemple, on a ajouté l'attribut consommationElectrique pour la classe Lampe, calculé en fonction de la puissance et de la luminosité de la lampe.
 
-![code]![Capture d'écran 2024-04-29 204825](https://github.com/nouhabennasr/projectagl/assets/168307999/d2a277b5-73cf-46f3-931d-ff19666d5bf4)
-![code]![Capture d'écran 2024-04-29 205057](https://github.com/nouhabennasr/projectagl/assets/168307999/e27776b2-a00a-4974-a732-84fa011ac86c)
-![code]![Capture d'écran 2024-04-29 205129](https://github.com/nouhabennasr/projectagl/assets/168307999/d80a6a66-2ef1-48c0-87c1-f49105217b1b)
-![code]![Capture d'écran 2024-04-29 205205](https://github.com/nouhabennasr/projectagl/assets/168307999/27e1fff6-5369-4efb-9db8-187288946b30)
-![code]![Capture d'écran 2024-04-29 205241](https://github.com/nouhabennasr/projectagl/assets/168307999/05d80e3e-0af9-4a2c-ab55-1091bc6c7cbe)
+![diag rendu4](https://github.com/nouhabennasr/projectagl/assets/168307999/fe806144-6da3-459d-9456-85b8c1fa905d)
+
+![Capture d'écran 2024-04-29 205057](https://github.com/nouhabennasr/projectagl/assets/168307999/e27776b2-a00a-4974-a732-84fa011ac86c)
+![Capture d'écran 2024-04-29 205129](https://github.com/nouhabennasr/projectagl/assets/168307999/d80a6a66-2ef1-48c0-87c1-f49105217b1b)
+![Capture d'écran 2024-04-29 205205](https://github.com/nouhabennasr/projectagl/assets/168307999/27e1fff6-5369-4efb-9db8-187288946b30)
+![Capture d'écran 2024-04-29 205241](https://github.com/nouhabennasr/projectagl/assets/168307999/05d80e3e-0af9-4a2c-ab55-1091bc6c7cbe)
 
 2. Invariants :
 
