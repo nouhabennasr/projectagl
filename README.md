@@ -196,7 +196,8 @@ c)Diagramme de cas d’utilisation détaillé de “Piloter les équipements él
 Le fonctionnement de pilotage de la plateforme domotique peut être décrit par le cas
 d’utilisation. En effet, l’utilisateur distant a le choix de démarrer, arrêter les équipements
 électriques de notre système domotique.
-![image](https://github.com/nouhabennasr/projectagl/assets/168307999/01afe037-1c47-4f70-bc05-4d6aafe18ac3)
+![usecase piloter équipement](https://github.com/nouhabennasr/projectagl/assets/168307999/fa8b3acf-f161-4e91-b21c-49cea7664768)
+
 
 
 « Activer un équipement électrique» :l’utilisateur peut allumer une lampe, ouvrir un volet ou bien activer le système d’alarme.
